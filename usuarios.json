@@ -1,5 +1,42 @@
 [
-    "Elia",
-    "eliarandom@gmail.com",
-    "123"
+    {
+        "nombre": "Elia",
+        "email": "eliarandom@gmail.com",
+        "password": "123123A"
+    },
+    {
+        "nombre": "Elia2",
+        "email": "eliarandom2@gmail.com",
+        "password": "123123A"
+    },
+    {
+        "nombre": "Elia3",
+        "email": "eliarandom3@gmail.com",
+        "password": "123123A"
+    },
+    {
+        "nombre": "Elia4",
+        "email": "eliarandom4@gmail.com",
+        "password": ""
+    },
+    {
+        "nombre": "Elia",
+        "email": "eliarandom21@gmail.com",
+        "password": "123"
+    },
+    {
+        "nombre": "Elia",
+        "email": "eliarando2m@gmail.com",
+        "password": "1"
+    },
+    {
+        "nombre": "Elia",
+        "email": "eliarandom33@gmail.com",
+        "password": "1"
+    },
+    {
+        "nombre": "Eliaser1",
+        "email": "eliarandom12@gmail.com",
+        "password": "123123"
+    }
 ]

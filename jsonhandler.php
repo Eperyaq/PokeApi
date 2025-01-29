@@ -10,11 +10,14 @@
         return []; // Si el archivo no existe, devolver un array vacío
     }
     
-    function saveEventsToJson($events)
+    function saveEventsToJson($newuser)
     {
         // Nombre del archivo JSON
         $file = 'usuarios.json';
-        file_put_contents($file, json_encode($events, JSON_PRETTY_PRINT));
+        $usuariosexistentes = loadEventsFromJson();
+
+        $usuariosexistentes[] = $newuser;
+        file_put_contents($file, json_encode($usuariosexistentes, JSON_PRETTY_PRINT));
     }
 
 

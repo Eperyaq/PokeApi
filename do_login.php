@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrarse - Estilo Pokémon</title>
+    <title>Login</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -58,14 +58,18 @@
             color: #2d2d2d;
         }
 
-        input[type="text"], input[type="email"], input[type="password"] {
+        input[type="text"], input[type="password"] {
             width: 90%;
             padding: 10px;
-            
+            border: 3px solid #ffcb05;
             border-radius: 10px;
             font-size: 1rem;
             margin-bottom: 15px;
             background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        input[type="text"].wrong, input[type="password"].wrong {
+            border: 3px solid red;
         }
 
         button {
@@ -84,51 +88,38 @@
             color: #fff;
         }
 
-        button[type="reset"] {
-            background: linear-gradient(to bottom, #ff0000, #b20000);
-            color: #fff;
-        }
-
         button:hover {
             transform: scale(1.05);
         }
-
         .wrong{
             border: 3px solid red;
         }
     </style>
 </head>
 <body>
-<?php  require_once "funcionRegister.php";  ?>
     <header>
         <a href="do_register.php">Registrarse</a>
         <a href="do_login.php">Login</a>
     </header>
 
-    <form action="funcionRegister.php" method="post">
-        <h2>Regístrate</h2>
+    <form action="funcionLogin.php" method="post">
+        <h1>Iniciar Sesión</h1>
 
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" class=<?= isset($fallo) ? "wrong" : "" ?> value="<?= isset($nombre) ? $nombre : '' ?>" > 
+        <label for="usuario">Nombre de usuario</label>
+        <input type="text" name="usuario" class=<?= isset($error) ? "wrong" : ""?> value="<?= isset($usuario) ? $usuario : '' ?>">
 
-        <label for="email">Email</label>
-        <input type="email" name="email" placeholder="entrenador@pokemon.com" class=<?= isset($fallo) ? "wrong" : "" ?> value="<?= isset($email) ? $email : '' ?>">
+        <br>
 
         <label for="password">Contraseña</label>
-        <input type="password" name="password" class=<?= isset($fallo) ? "wrong" : "" ?> value="<?= isset($password) ? $password : '' ?>">
+        <input type="password" name="password" class=<?= isset($error) ? "wrong" : ""?> >
 
-        <label for="password2">Repite la contraseña</label>
-        <input type="password" name="password2" class=<?= isset($fallo) ? "wrong" : "" ?> value="<?= isset($password2) ? $password2 : '' ?>">
+        <button type="submit">Login</button>
 
-
-        <?php if(isset($fallo)) : ?>
-    
-            <p style="color:red;">Registro INCORRECTO</p>
-
-        <?php endif; ?>
-
-        <button type="submit">Enviar</button>
-        <button type="reset">Borrar</button>
+        <?php
+            if (isset($error)) {
+                echo "<p style='color:red;'>Usuario no encontrado. Verifica tus datos.</p>";
+            }
+        ?>
     </form>
 </body>
 </html>
